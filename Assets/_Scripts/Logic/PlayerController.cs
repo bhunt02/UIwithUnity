@@ -1,6 +1,7 @@
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -111,5 +112,10 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+    }
+
+    public void UpdatePlayerMaxSpeed(Slider slider)
+    {
+        maxSpeed = slider.value;
     }
 }
